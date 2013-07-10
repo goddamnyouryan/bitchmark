@@ -22,14 +22,17 @@ class PagesController < ApplicationController
   def group_id
     if params[:page][:group] == 'new'
       title = params[:page].delete :new_group
-      group = @account.groups.create title: title
-      group = Group.find_or_create_by_account_id_and_title(@account.id, title)
+      group = group_find_or_create(@account.id, title)
       group.id
     elsif params[:page][:group] == ''
-      group = Group.find_or_create_by_account_id_and_title(@account.id, 'Not grouped')
+      group = group_find_or_create(@account.id, 'Not grouped')
       group.id
     else
       params[:page][:group]
     end
+  end
+
+  def group_find_or_create(account_id, title)
+    Group.find_or_create_by_account_id_and_title(account_id, title)
   end
 end
