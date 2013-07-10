@@ -1,0 +1,2 @@
+p.new_group
+  input id="page_new_group" name="page[new_group]" placeholder="Name this new group of yours." type="text"

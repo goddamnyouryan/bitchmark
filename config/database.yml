@@ -1,0 +1,16 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: bitchmark_development
+  pool: 5
+  username: sharpei
+  password:
+  #min_messages: notice
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: bitchmark_test
+  pool: 5
+  username: sharpei
+  password:
