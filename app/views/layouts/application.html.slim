@@ -8,4 +8,7 @@ html
 
   body
     h1 = link_to 'Bitchmark', root_path
-    = yield
+    .container
+      = yield
+
+    footer ©#{Time.now.year} #{link_to 'goddamnyouryan', 'http://www.goddamnyouryan.com', target: '_blank'}

@@ -2,6 +2,8 @@ class Account < ActiveRecord::Base
 
   has_many :groups
 
+  validates :hash_id, uniqueness: true
+
   before_validation :create_hash_id
 
   def to_param

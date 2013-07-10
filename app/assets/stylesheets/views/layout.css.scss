@@ -1,3 +1,64 @@
-// Place all the styles related to the welcome controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  @include helvetica(14px);
+  background: $white;
+  color: $black;
+  border-top: 4px solid $pink;
+
+  h1 {
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+    margin: 50px 0;
+  }
+
+  h2 {
+    font-weight: bold;
+    font-size: 24px;
+    margin: 0 0 25px 0;
+  }
+
+  h3 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: bold;
+  }
+
+  a {
+    @include single-transition(color, 0.15s, ease-in-out);
+    text-decoration: none;
+    color: $black;
+
+    &:hover {
+      color: $pink;
+    }
+  }
+
+  input[type=submit] {
+    @include helvetica(24px);
+    @include single-transition(background, 0.15s, ease-in-out);
+    background: $black;
+    color: $white;
+    border: none;
+    padding: 10px;
+    text-align: center;
+    width: 252px;
+    cursor: pointer;
+
+    &:hover {
+      background: $pink;
+    }
+  }
+
+  .container {
+    @include clearfix;
+    width: 900px;
+    margin: 0 auto;
+  }
+
+  footer {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,9 @@
+@mixin font-format($font-family, $font-size) {
+  font-family: $font-family, 'Helvetica-Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: $font-size;
+  line-height: $font-size * 1.3;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+}
+
+@mixin helvetica($font-size) { @include font-format('Helvetica Neue', $font-size); }
