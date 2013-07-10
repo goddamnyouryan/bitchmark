@@ -4,4 +4,4 @@ class Bitchmark.Routers.Application extends Backbone.Router
     ':hashId': 'account'
 
   account: (hashId) ->
-    new Bitchmark.Views.Page el: 'body'
+    new Bitchmark.Views.NewPage el: 'form#new_page'

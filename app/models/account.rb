@@ -13,6 +13,6 @@ class Account < ActiveRecord::Base
   private
 
   def create_hash_id
-    self.hash_id = SecureRandom.hex.first(7)
+    self.hash_id = SecureRandom.hex.first(7) unless self.hash_id.present?
   end
 end

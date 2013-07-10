@@ -1,9 +1,9 @@
-class Bitchmark.Views.Page extends Backbone.View
+class Bitchmark.Views.NewPage extends Backbone.View
 
-  template: JST['page']
+  template: JST['new_page']
 
   events: ->
-    'change form select': 'showNewGroup'
+    'change select': 'showNewGroup'
 
   showNewGroup: (event) ->
     target = $(event.target)

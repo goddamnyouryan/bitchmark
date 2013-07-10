@@ -1,0 +1,8 @@
+h2.group
+  =' group.title
+  =' link_to 'Edit', group, class: 'edit'
+  =' link_to 'Link', group, class: 'link'
+  =' link_to 'Delete', group, method: :delete, class: 'delete'
+ul.pages
+  - group.pages.each do |page|
+    li = link_to page.url, page.url, target: '_blank'
