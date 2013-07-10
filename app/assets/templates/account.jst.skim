@@ -1,0 +1,12 @@
+- for group in @account.get('groups').models
+  - if group.get('pages').length > 0
+    li
+      h2.group
+        =' group.get('title')
+        a.edit' href="/groups/#{group.get('hash_id')}" Edit
+        a.link' href="/groups/#{group.get('hash_id')}" Link
+        a.delete data-method="delete" href="/groups/#{group.get('hash_id')}" rel="nofollow" Delete
+      ul.pages
+        - for page in group.get('pages').models
+          li
+            a href="#{page.get('url')}" target="_blank" = page.get('url')
