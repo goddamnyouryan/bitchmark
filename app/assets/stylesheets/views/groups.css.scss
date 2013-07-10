@@ -1,3 +1,55 @@
-// Place all the styles related to the groups controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+h2.group {
+  @include pie-clearfix;
+  padding: 0 0 25px 0;
+  margin: 0;
+
+  .icons {
+    opacity: 0;
+  }
+
+  &:hover .icons {
+    opacity: 1;
+  }
+
+  .title, .edit, .link, .delete, .drag {
+    @include float-left;
+    display: block;
+  }
+
+  .drag {
+    @include grab;
+    margin: 0 10px 0 -10px !important;
+  }
+
+  .title {
+    margin-right: 15px;
+  }
+
+  .edit, .link, .delete, .drag {
+    $size: 18px;
+    width: $size;
+    visibility: hidden;
+    margin: 1px 5px 0 0;
+
+    &:before {
+      @include fonts($size);
+      visibility: visible;
+    }
+  }
+
+  .drag:before {
+    content: '\F0C9';
+  }
+
+  .edit:before {
+    content: '\F044';
+  }
+
+  .link:before {
+    content: '\F0C1';
+  }
+
+  .delete:before {
+    content: '\F014';
+  }
+}

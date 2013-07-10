@@ -1,3 +1,18 @@
+$fonts: 'FontAwesome';
+
+@each $font in $fonts {
+  @include font-face(
+    $font,
+    font-files(
+      '#{$font}.woff', woff,
+      '#{$font}.ttf', truetype,
+      '#{$font}.svg##{$font}', svg
+    ),
+    '#{$font}.eot',
+    normal,
+    normal
+  );
+}
 @mixin font-format($font-family, $font-size) {
   font-family: $font-family, 'Helvetica-Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: $font-size;
@@ -7,3 +22,4 @@
 }
 
 @mixin helvetica($font-size) { @include font-format('Helvetica Neue', $font-size); }
+@mixin fonts($font-size) { @include font-format('FontAwesome', $font-size); }
