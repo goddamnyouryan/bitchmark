@@ -8,6 +8,7 @@ Bitchmark::Application.routes.draw do
 
   namespace :api do
     resources :accounts, only: [:show]
+    resources :groups, only: [:show, :destroy, :update]
     resources :pages, only: [:create, :destroy]
   end
 

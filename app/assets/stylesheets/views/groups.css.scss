@@ -3,8 +3,22 @@ h2.group {
   padding: 0 0 25px 0;
   margin: 0;
 
+  input[type=text] {
+    margin: -5px 0 0 0;
+    position: relative;
+  }
+
   .icons {
     opacity: 0;
+  }
+
+  .confirm {
+    font-size: 14px;
+    font-weight: normal;
+
+    a {
+      font-weight: bold;
+    }
   }
 
   &:hover .icons {
@@ -34,6 +48,10 @@ h2.group {
     &:before {
       @include fonts($size);
       visibility: visible;
+    }
+
+    &.active {
+      color: $pink;
     }
   }
 

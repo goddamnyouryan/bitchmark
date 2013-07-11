@@ -11,7 +11,7 @@ class Bitchmark.Views.Account extends Backbone.View
     @model.fetch success: @render
 
   render: =>
-    new Bitchmark.Views.Group el: 'h2.group'
+    new Bitchmark.Views.Group el: 'ul#groups'
     new Bitchmark.Views.NewPage el: 'form#new_page', model: @model
     @displayGroups(@model)
 

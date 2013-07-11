@@ -1,6 +1,6 @@
 - for group in @account.get('groups').models
   - if group.get('pages').length > 0
-    li
+    li data-hash-id="#{group.get('hash_id')}"
       h2.group
         .icons
           span.drag Drag
@@ -8,7 +8,7 @@
         .icons
           a.edit' href="/groups/#{group.get('hash_id')}" Edit
           a.link' href="/groups/#{group.get('hash_id')}" Link
-          a.delete data-method="delete" href="/groups/#{group.get('hash_id')}" rel="nofollow" Delete
+          a.delete href="/groups/#{group.get('hash_id')}" rel="nofollow" Delete
       ul.pages
         - for page in group.get('pages').models
           li
