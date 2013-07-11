@@ -1,5 +1,8 @@
 class Bitchmark.Views.Group extends Backbone.View
 
+  initialize: ->
+    @sortGroups()
+
   events: ->
     'click .edit': 'showEditForm'
     'click .link': 'showLinkField'
@@ -85,3 +88,10 @@ class Bitchmark.Views.Group extends Backbone.View
       success: (model) ->
         model.set title: title
         model.save()
+
+  sortGroups: ->
+    $('.sort').sortable
+      axis: 'y'
+      handle: '.drag'
+      update: ->
+        $.post($(this).data('update-url'), $(this).sortable('serialize'))

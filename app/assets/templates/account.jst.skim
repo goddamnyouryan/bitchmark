@@ -1,6 +1,6 @@
 - for group in @account.get('groups').models
   - if group.get('pages').length > 0
-    li data-hash-id="#{group.get('hash_id')}"
+    li data-hash-id="#{group.get('hash_id')}" id="group_#{group.get('id')}"
       h2.group
         .icons
           span.drag Drag

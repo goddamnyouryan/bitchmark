@@ -16,6 +16,13 @@ class Api::GroupsController < ApplicationController
     respond_with @group
   end
 
+  def sort
+    params[:group].each_with_index do |id, index|
+      Group.update_all({position: index + 1}, { id: id })
+    end
+    render nothing: true
+  end
+
   private
 
   def find_group

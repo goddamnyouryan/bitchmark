@@ -8,7 +8,9 @@ Bitchmark::Application.routes.draw do
 
   namespace :api do
     resources :accounts, only: [:show]
-    resources :groups, only: [:show, :destroy, :update]
+    resources :groups, only: [:show, :destroy, :update] do
+      collection { post :sort }
+    end
     resources :pages, only: [:create, :destroy]
   end
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130710143533) do
+ActiveRecord::Schema.define(version: 20130711172140) do
 
   create_table "accounts", force: true do |t|
     t.string   "hash_id"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20130710143533) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "hash_id"
+    t.integer  "position"
   end
 
   create_table "pages", force: true do |t|

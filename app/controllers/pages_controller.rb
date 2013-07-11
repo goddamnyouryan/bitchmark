@@ -33,6 +33,11 @@ class PagesController < ApplicationController
   end
 
   def group_find_or_create(account_id, title)
-    Group.find_or_create_by_account_id_and_title(account_id, title)
+    group = Group.find_or_initialize_by_account_id_and_title(account_id, title)
+    if group.new_record?
+      group.position = 0
+    end
+    group.save
+    group
   end
 end
