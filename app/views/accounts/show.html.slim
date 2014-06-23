@@ -1,15 +1,5 @@
 h3 Bookmark this page, or just come back to bitchmark.me (we've cookied you so your shit will always be here.)
 
-= form_for @page do |f|
-
-  h2 Add a new Bookmark
-
-  = f.hidden_field :account_hash_id, value: @account.hash_id
-
-  p = f.text_field :url, placeholder: 'Paste the url here ya dum dum'
-
-  p = f.select :group, @options, prompt: 'Group this bookmark'
-
-  p = f.submit 'Add Page'
+#sidebar
 
 ul#groups.sort data-update-url="#{sort_api_groups_path}"

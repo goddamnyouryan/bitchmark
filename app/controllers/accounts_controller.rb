@@ -7,17 +7,8 @@ class AccountsController < ApplicationController
   def show
     @account = Account.find_by_hash_id params[:hash_id]
     cookies[:bitchmark_account] = {value: @account.hash_id, expires: 1.year.from_now }
-    @page = Page.new
-    @options = options_for_new_site_select
   end
 
   def destroy
-  end
-
-  private
-
-  def options_for_new_site_select
-    @groups = @account.groups.map {|group| [group.title, group.id] }
-    @groups + [['New Group', 'new'], ['Fuckit, don\'t group it', '']]
   end
 end

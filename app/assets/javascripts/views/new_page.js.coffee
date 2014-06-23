@@ -5,16 +5,22 @@ class Bitchmark.Views.NewPage extends Backbone.View
   initialize: (options) ->
     @model = options.model
 
+  render: ->
+    @$el.html @template(model: @model, csrf: @csrf())
+
   events: ->
     'change select': 'showNewGroup'
-    'submit': 'submitPage'
+    'submit form': 'submitPage'
+
+  csrf: ->
+    $('meta[name=csrf-token]').attr 'content'
 
   showNewGroup: (event) ->
     target = $(event.target)
     if target.val() == 'new'
-      target.parents('p').after @template
+      @$el.find('.new_group').show()
     else
-      @$el.find('.new_group').remove()
+      @$el.find('.new_group').hide()
 
   submitPage: (event) ->
     event.preventDefault()

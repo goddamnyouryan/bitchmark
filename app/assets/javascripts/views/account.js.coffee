@@ -7,18 +7,22 @@ class Bitchmark.Views.Account extends Backbone.View
 
   initialize: (options) ->
     @hashId = options.hashId
-    @model = new Bitchmark.Models.Account hashId: @hashId
+    @model = @newModel()
+    @form = new Bitchmark.Views.NewPage(el: 'div#sidebar', model: @model)
     @model.fetch success: @render
 
   render: =>
     new Bitchmark.Views.Group el: 'ul#groups'
-    new Bitchmark.Views.NewPage el: 'form#new_page', model: @model
+    @form.render()
     @displayGroups(@model)
 
+  newModel: ->
+    new Bitchmark.Models.Account hashId: @hashId
+
   updateGroups: ->
-    updatedModel = new Bitchmark.Models.Account hashId: @hashId
+    updatedModel = @newModel()
     @model.fetch
-      success: (model) => @displayGroups(model)
+      success: => @render()
 
   displayGroups: (model) ->
     @$el.find('ul#groups').html @template(account: model)
