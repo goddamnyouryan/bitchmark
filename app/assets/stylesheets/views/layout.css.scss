@@ -33,22 +33,6 @@ body {
     }
   }
 
-  input[type=submit] {
-    @include helvetica(24px);
-    @include single-transition(background, 0.15s, ease-in-out);
-    background: $black;
-    color: $white;
-    border: none;
-    padding: 10px;
-    text-align: center;
-    width: 252px;
-    cursor: pointer;
-
-    &:hover {
-      background: $pink;
-    }
-  }
-
   .container {
     @include clearfix;
     width: 900px;

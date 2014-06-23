@@ -8,7 +8,7 @@ h3 Bookmark this page, or just come back to bitchmark.me (we've cookied you so y
 
   p = f.text_field :url, placeholder: 'Paste the url here ya dum dum'
 
-  p = f.select :group, options_for_select(@options), prompt: 'Group this bookmark'
+  p = f.select :group, @options, prompt: 'Group this bookmark'
 
   p = f.submit 'Add Page'
 
