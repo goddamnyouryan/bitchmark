@@ -16,6 +16,7 @@ gem 'skim'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'newrelic_rpm'
+gem 'i18n', '0.6.9'
 
 group :development do
   gem 'lol_dba'
