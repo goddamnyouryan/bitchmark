@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def create
-    @account = Account.find_by_hash_id params[:page].delete :account_hash_id
+    @account = Account.find_by(hash_id: params[:page].delete(:account_hash_id))
     @page = Page.create page_params
     if @page.save
       redirect_to :back
@@ -33,10 +33,8 @@ class PagesController < ApplicationController
   end
 
   def group_find_or_create(account_id, title)
-    group = Group.find_or_initialize_by_account_id_and_title(account_id, title)
-    if group.new_record?
-      group.position = 0
-    end
+    group = Group.find_or_initialize_by(account_id: account_id, title: title)
+    group.position = 0 if group.new_record?
     group.save
     group
   end

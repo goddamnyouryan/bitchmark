@@ -26,6 +26,6 @@ class Api::GroupsController < ApplicationController
   private
 
   def find_group
-    @group = Group.includes(:account, :pages).find_by_hash_id params[:id]
+    @group = Group.includes(:account, :pages).find_by(hash_id: params[:id])
   end
 end

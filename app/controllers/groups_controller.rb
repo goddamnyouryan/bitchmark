@@ -12,6 +12,6 @@ class GroupsController < ApplicationController
   private
 
   def find_group
-    @group = Group.find_by_hash_id params[:id]
+    @group = Group.find_by(hash_id: params[:id])
   end
 end
