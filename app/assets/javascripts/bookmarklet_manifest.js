@@ -1,14 +1,9 @@
 //= require jquery
-//= require jquery_ujs
-//= require jquery.ui.sortable
-//= require turbolinks
 //= require underscore
 //= require backbone
 //= require backbone-associations-min
-//= require backbone-mediator
-//= require bitchmark
+//= require namespace
 //= require_tree ../templates
 //= require_tree ./models
 //= require_tree ./collections
 //= require_tree ./views
-//= require_tree ./routers

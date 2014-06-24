@@ -21,6 +21,12 @@ body {
     text-align: center;
     margin-bottom: 50px;
     font-weight: bold;
+
+    a {
+      color: $pink;
+
+      &:hover { text-decoration: underline; }
+    }
   }
 
   a {
