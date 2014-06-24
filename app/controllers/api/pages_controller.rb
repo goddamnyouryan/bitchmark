@@ -1,5 +1,6 @@
 class Api::PagesController < PagesController
   respond_to :json
+  skip_before_filter :verify_authenticity_token
 
   def create
     @account = Account.find_by(hash_id: params[:page].delete(:account_hash_id))

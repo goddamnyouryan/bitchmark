@@ -1,13 +1,16 @@
-form accept-charset='UTF-8' action='/pages' class='new_page' id='new_page' method='post' style='position:absolute;'
-  h2 Add a new Bookmark
-  input id='page_account_hash_id' name='page[account_hash_id]' type='hidden' value="#{@model.get('hash_id')}"
-  input id='page_url' name='page[url]' placeholder='Paste the url here ya dum dum' type='text'
-  select id='page_group' name='page[group]'
-    option value ='' Choose a Group
-    - _.each @model.get('groups').models, (group) =>
-      option value="#{group.get('id')}" = group.get('title')
-    option value='new' New Group
-    option value='' Fuckit, don't group it.
+#bitchmark-bookmarklet
+  form accept-charset='UTF-8' action='/pages' class='new_page' id='new_page' method='post'
+    h2 Add a new Bitchmark Bookmark
+    input id='page_account_hash_id' name='page[account_hash_id]' type='hidden' value="#{@model.get('hash_id')}"
+    input id='page_url' name='page[url]' placeholder='Paste the url here ya dum dum' type='text' value="#{document.URL}"
+    select id='page_group' name='page[group]'
+      option value ='' Choose a Group
+      - _.each @model.get('groups').models, (group) =>
+        option value="#{group.get('id')}" = group.get('title')
+      option value='new' New Group
+      option value='' Fuckit, don't group it.
 
-  input.new_group id='page_new_group' name='page[new_group]' placeholder='Name this new group of yours.' type='text' style='display:none;'
-  input name='commit' type='submit' value='Add Page'
+    input.new_group id='page_new_group' name='page[new_group]' placeholder='Name this new group of yours.' type='text' style='display:none;'
+    input name='commit' type='submit' value='Add Page'
+
+  a.close Close

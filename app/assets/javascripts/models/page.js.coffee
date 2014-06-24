@@ -1,4 +1,4 @@
 class Bitchmark.Models.Page extends Backbone.AssociatedModel
 
   urlRoot: ->
-    '/api/pages'
+    'http://localhost:3000/api/pages.json'

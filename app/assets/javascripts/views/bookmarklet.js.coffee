@@ -12,6 +12,7 @@ class Bitchmark.Views.Bookmarklet extends Backbone.View
   events: ->
     'change select': 'showNewGroup'
     'submit form': 'submitPage'
+    'click .close': 'removeBookmarklet'
 
   showNewGroup: (event) ->
     target = $(event.target)
@@ -38,6 +39,8 @@ class Bitchmark.Views.Bookmarklet extends Backbone.View
     }
 
   success: ->
-    @$el.find('input[type=text], select').val ''
-    @$el.find('#page_new_group').remove()
-    Backbone.Mediator.publish('account:add')
+    @$('#bitchmark-bookmarklet form').remove()
+    @$('#bitchmark-bookmarklet').prepend("<h2>Added link to your Account. <a href='http://www.bitchmark.me/#{@model.get('hash_id')}'>View your account</a>.</h2>")
+
+  removeBookmarklet: ->
+    @$('#bitchmark-bookmarklet').remove()
