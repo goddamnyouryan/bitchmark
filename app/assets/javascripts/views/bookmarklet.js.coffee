@@ -3,8 +3,11 @@ class Bitchmark.Views.Bookmarklet extends Backbone.View
   template: JST['bookmarklet']
 
   initialize: (options) ->
-    @model = new Bitchmark.Models.Account hashId: options.hashId
-    @model.fetch success: => @render()
+    if @$('#bitchmark-bookmarklet').length > 0
+      @unbind()
+    else
+      @model = new Bitchmark.Models.Account hashId: options.hashId
+      @model.fetch success: => @render()
 
   render: ->
     @$el.prepend @template(model: @model)
@@ -44,3 +47,4 @@ class Bitchmark.Views.Bookmarklet extends Backbone.View
 
   removeBookmarklet: ->
     @$('#bitchmark-bookmarklet').remove()
+    @$el.removeData().unbind()
