@@ -1,0 +1,11 @@
+@mixin button {
+  background: $black;
+  color: $white;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+
+  &:hover {
+    background: $pink;
+  }
+}

@@ -1,0 +1,64 @@
+@import 'mixins/colors';
+@import 'mixins/buttons';
+@import 'mixins/form';
+
+#bitchmark-bookmarklet {
+  position: fixed;
+  top: 0; left: 0;
+  z-index: 999999999999;
+  background: $white;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+  border-bottom: 1px solid darken($white, 15%);
+  overflow: hidden;
+
+  form {
+    float: left;
+    margin: 0;
+  }
+
+  h2 {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    display: inline;
+    margin: 0 25px 0 0;
+    color: $black;
+  }
+
+  input {
+    outline: none;
+  }
+
+  input[type=text] {
+    @include text-input;
+    margin: 0 25px 0 0;
+  }
+
+  select {
+    margin: 0 25px 0 0;
+  }
+
+  input[type=submit] {
+    @include button;
+    font-family: Helvetica, Arial, sans-serif;
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  a.close {
+    float: right;
+    display: block;
+    color: transparent;
+    cursor: pointer;
+    font-size: 18px;
+    margin: 7px 0 0 0;
+
+    &:after {
+      content: '\2716';
+      color: $black;
+
+      &:hover { color: $pink; }
+    }
+  }
+}

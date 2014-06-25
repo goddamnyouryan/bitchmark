@@ -3,26 +3,16 @@ $margin: 15px;
 input { outline: none; }
 
 input[type=text] {
-  padding: 10px;
-  width: 230px;
-  border: 1px solid darken($white, 20%);
+  @include text-input;
   margin: 0 0 $margin 0;
 }
 
 input[type=submit] {
   @include helvetica(24px);
   @include single-transition(background, 0.15s, ease-in-out);
-  background: $black;
-  color: $white;
-  border: none;
+  @include button;
   padding: 10px;
-  text-align: center;
   width: 252px;
-  cursor: pointer;
-
-  &:hover {
-    background: $pink;
-  }
 }
 
 select {
