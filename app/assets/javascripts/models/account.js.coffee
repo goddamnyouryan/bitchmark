@@ -4,7 +4,7 @@ class Bitchmark.Models.Account extends Backbone.AssociatedModel
     @hashId = options.hashId
 
   urlRoot: ->
-    "http://www.bitchmark.me/api/accounts/#{@hashId}.json"
+    "#{Bitchmark.Constants.API_ROOT}/api/accounts/#{@hashId}.json"
 
   relations: [
     type: Backbone.Many
