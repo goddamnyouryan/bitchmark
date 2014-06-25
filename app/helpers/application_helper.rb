@@ -29,14 +29,14 @@ module ApplicationHelper
   end
 
   def bookmarklet_path
-    remove_fingerprint "//#{request.env['HTTP_HOST']}#{javascript_path('bookmarklet-#{Rails.env}')}"
+    remove_fingerprint "//#{request.env['HTTP_HOST']}#{javascript_path('bookmarklet-#{Rails.env}')}", '.js'
   end
 
   def bookmarklet_css_path
-    remove_fingerprint "//#{request.env['HTTP_HOST']}#{stylesheet_path('bookmarklet')}"
+    remove_fingerprint "//#{request.env['HTTP_HOST']}#{stylesheet_path('bookmarklet')}", '.css'
   end
 
-  def remove_fingerprint(url)
-    url.split(/-|.css/)[0] + '.css'
+  def remove_fingerprint(url, extension)
+    url.split(/-|.css/)[0] + extension
   end
 end
