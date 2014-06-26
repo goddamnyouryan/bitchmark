@@ -29,7 +29,9 @@ module ApplicationHelper
   end
 
   def bookmarklet_path
-    remove_fingerprint "//#{request.env['HTTP_HOST']}#{javascript_path('bookmarklet-#{Rails.env}')}", '.js'
+    env = Rails.env.production? ? 'production' : 'development'
+    path = javascript_path("bookmarklet_#{env}")
+    remove_fingerprint "//#{request.env['HTTP_HOST']}#{path}", '.js'
   end
 
   def bookmarklet_css_path
@@ -37,6 +39,6 @@ module ApplicationHelper
   end
 
   def remove_fingerprint(url, extension)
-    url.split(/-|.css/)[0] + extension
+    url.split(/-|.css|.js/)[0] + extension
   end
 end

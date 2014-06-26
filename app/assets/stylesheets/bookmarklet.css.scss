@@ -22,9 +22,16 @@
   h2 {
     font-family: Helvetica, Arial, sans-serif;
     font-size: 18px;
-    display: inline;
+    display: inline-block;
     margin: 0 25px 0 0;
     color: $black;
+
+    a {
+      color: $pink;
+      text-decoration: none;
+
+      &:hover { text-decoration: underline; }
+    }
   }
 
   input {

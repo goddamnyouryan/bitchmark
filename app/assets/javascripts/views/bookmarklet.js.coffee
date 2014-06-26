@@ -42,8 +42,7 @@ class Bitchmark.Views.Bookmarklet extends Backbone.View
     }
 
   success: ->
-    @$('#bitchmark-bookmarklet form').remove()
-    @$('#bitchmark-bookmarklet').prepend("<h2>Added link to your Account. <a href='http://www.bitchmark.me/#{@model.get('hash_id')}'>View your account</a>.</h2>")
+    @$('#bitchmark-bookmarklet form').html "<h2 style='padding:8px 0 11px;'>Added link to your Account. <a href='#{Bitchmark.Constants.API_ROOT}/#{@model.get('hash_id')}'>View your account</a>.</h2>"
 
   removeBookmarklet: ->
     @$('#bitchmark-bookmarklet').remove()
