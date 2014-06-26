@@ -22,9 +22,11 @@ gem 'rack-cors', require: 'rack/cors'
 group :development do
   gem 'lol_dba'
   gem 'bullet'
+  gem 'spring-commands-rspec'
 end
 
 group :development, :test do
+  gem 'rspec-rails'
   gem 'spring'
   gem 'byebug'
 end
