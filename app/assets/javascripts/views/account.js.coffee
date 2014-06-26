@@ -12,7 +12,7 @@ class Bitchmark.Views.Account extends Backbone.View
     @model.fetch success: @render
 
   render: =>
-    new Bitchmark.Views.Group el: 'ul#groups'
+    @groups = new Bitchmark.Views.Group el: 'ul#groups'
     @form.render()
     @displayGroups(@model)
 
@@ -22,7 +22,10 @@ class Bitchmark.Views.Account extends Backbone.View
   updateGroups: ->
     updatedModel = @newModel()
     @model.fetch
-      success: => @render()
+      success: =>
+        @groups.unbind()
+        @groups.undelegateEvents()
+        @render()
 
   displayGroups: (model) ->
     @$el.find('ul#groups').html @template(account: model)
