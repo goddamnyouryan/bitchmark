@@ -9,7 +9,7 @@ input[type=text] {
 
 input[type=submit] {
   @include helvetica(24px);
-  @include single-transition(background, 0.15s, ease-in-out);
+  @include _transition(background);
   @include button;
   padding: 10px;
   width: 252px;

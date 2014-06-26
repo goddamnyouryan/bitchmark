@@ -1,0 +1,12 @@
+@mixin _transition($attribute) {
+  @include single-transition($attribute, 0.2s, ease-in-out);
+}
+
+@mixin cancel-float {
+  float: none;
+  display: block;
+}
+
+@mixin media($width) {
+  @media all and (max-width: $width) { @content; }
+}

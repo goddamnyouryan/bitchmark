@@ -30,7 +30,7 @@ body {
   }
 
   a {
-    @include single-transition(color, 0.15s, ease-in-out);
+    @include _transition(color);
     text-decoration: none;
     color: $black;
 
@@ -41,8 +41,14 @@ body {
 
   .container {
     @include clearfix;
-    width: 900px;
+    width: $width;
     margin: 0 auto;
+
+    @include media($width) {
+      width: 100%;
+      padding: 0 5%;
+      box-sizing: border-box;
+    }
   }
 
   footer {

@@ -10,6 +10,10 @@ h2.group {
 
   .icons {
     opacity: 0;
+
+    @include media($width) {
+      opacity: 1;
+    }
   }
 
   .confirm {

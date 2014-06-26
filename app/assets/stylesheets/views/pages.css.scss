@@ -1,5 +1,12 @@
 form.new_page {
   @include float-left;
+
+  @include media($width) {
+    @include cancel-float;
+    width: 100%;
+    text-align: center;
+    margin: 0 0 50px 0;
+  }
 }
 
 ul#groups {
@@ -11,6 +18,13 @@ ul#groups {
 
   > li {
     margin-bottom: 50px;
+  }
+
+  @include media($width) {
+    @include cancel-float;
+    width: 100%;
+    margin: 0; padding: 0;
+    border: none;
   }
 }
 
