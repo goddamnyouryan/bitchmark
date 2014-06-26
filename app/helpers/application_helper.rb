@@ -41,4 +41,8 @@ module ApplicationHelper
   def remove_fingerprint(url, extension)
     url.split(/-|.css|.js/)[0] + extension
   end
+
+  def open_source_message
+    "You a developer? #{link_to 'Bitchmark is open source', 'https://www.github.com/goddamnyouryan/bitchmark', target: '_blank'}. It uses Rails and Backbone. Feel free to contribute!"
+  end
 end
